@@ -12,18 +12,14 @@ const listingSchema = new Schema ({
         type: String,
         required: true,
     },
-    image: {
-        type: String,
-        default: "https://images.adsttc.com/media/images/5ea2/1167/b357/6525/4e00/004f/medium_jpg/2._E_PHX6017.jpg?1587679546",
-        set: (v) => {
-            if (!v || v.trim() === "") {
-                return "https://images.adsttc.com/media/images/5ea2/1167/b357/6525/4e00/004f/medium_jpg/2._E_PHX6017.jpg?1587679546";
-            }
-            return v;
-        },
-
-    },
-    
+   image:{
+        url: {
+            type: String,
+            default:
+              "https://images.unsplash.com/photo-1625505826533-5c80aca7d157?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fG9vYX",
+          },
+          filename: String,
+        }, 
     price:{
         type: Number,
         required: true,
